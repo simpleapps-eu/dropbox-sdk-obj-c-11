@@ -78,9 +78,8 @@ static DBReachability *internetReachableFoo;
     NSString *message = @"Try again once you have an internet connection.";
     NSString *title = @"No internet connection";
 
-    NSDictionary<NSString *, void (^)()> *buttonHandlers =
-        @{ @"Retry" : ^void(){
-               [self authorizeFromSharedApplication:sharedApplication browserAuth:browserAuth];
+    NSDictionary<NSString *, void (^)()> *buttonHandlers = @{@"Retry" : ^void(){
+        [self authorizeFromSharedApplication:sharedApplication browserAuth:browserAuth];
   }
 };
 

@@ -131,10 +131,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                          deprecated:@NO
                                          resultType:[DBFILESMetadata class]
                                           errorType:[DBFILESAlphaGetMetadataError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -148,10 +145,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                     deprecated:@NO
                                     resultType:[DBFILESFileMetadata class]
                                      errorType:[DBFILESUploadErrorWithProperties class]
-                                         attrs:@{
-                                           @"host" : @"content",
-                                           @"style" : @"upload"
-                                         }
+                                         attrs:@{@"host" : @"content", @"style" : @"upload"}
                               arraySerialBlock:nil
                             arrayDeserialBlock:nil];
   }
@@ -165,10 +159,7 @@ static DBRoute *DBFILESUploadSessionStart;
                               deprecated:@NO
                               resultType:[DBFILESMetadata class]
                                errorType:[DBFILESRelocationError class]
-                                   attrs:@{
-                                     @"host" : @"api",
-                                     @"style" : @"rpc"
-                                   }
+                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                         arraySerialBlock:nil
                       arrayDeserialBlock:nil];
   }
@@ -182,10 +173,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                    deprecated:@NO
                                    resultType:[DBASYNCLaunchEmptyResult class]
                                     errorType:nil
-                                        attrs:@{
-                                          @"host" : @"api",
-                                          @"style" : @"rpc"
-                                        }
+                                        attrs:@{@"host" : @"api", @"style" : @"rpc"}
                              arraySerialBlock:nil
                            arrayDeserialBlock:nil];
   }
@@ -199,10 +187,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                         deprecated:@NO
                                         resultType:[DBFILESRelocationBatchJobStatus class]
                                          errorType:[DBASYNCPollError class]
-                                             attrs:@{
-                                               @"host" : @"api",
-                                               @"style" : @"rpc"
-                                             }
+                                             attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                   arraySerialBlock:nil
                                 arrayDeserialBlock:nil];
   }
@@ -216,10 +201,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                           deprecated:@NO
                                           resultType:[DBFILESGetCopyReferenceResult class]
                                            errorType:[DBFILESGetCopyReferenceError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -233,10 +215,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                            deprecated:@NO
                                            resultType:[DBFILESSaveCopyReferenceResult class]
                                             errorType:[DBFILESSaveCopyReferenceError class]
-                                                attrs:@{
-                                                  @"host" : @"api",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -250,10 +229,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                      deprecated:@NO
                                      resultType:[DBFILESFolderMetadata class]
                                       errorType:[DBFILESCreateFolderError class]
-                                          attrs:@{
-                                            @"host" : @"api",
-                                            @"style" : @"rpc"
-                                          }
+                                          attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                arraySerialBlock:nil
                              arrayDeserialBlock:nil];
   }
@@ -267,10 +243,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                 deprecated:@NO
                                 resultType:[DBFILESMetadata class]
                                  errorType:[DBFILESDeleteError class]
-                                     attrs:@{
-                                       @"host" : @"api",
-                                       @"style" : @"rpc"
-                                     }
+                                     attrs:@{@"host" : @"api", @"style" : @"rpc"}
                           arraySerialBlock:nil
                         arrayDeserialBlock:nil];
   }
@@ -284,10 +257,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                     deprecated:@NO
                                     resultType:[DBASYNCLaunchEmptyResult class]
                                      errorType:nil
-                                         attrs:@{
-                                           @"host" : @"api",
-                                           @"style" : @"rpc"
-                                         }
+                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                               arraySerialBlock:nil
                             arrayDeserialBlock:nil];
   }
@@ -301,10 +271,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                          deprecated:@NO
                                          resultType:[DBFILESDeleteBatchJobStatus class]
                                           errorType:[DBASYNCPollError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -318,10 +285,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                  deprecated:@NO
                                  resultType:[DBFILESFileMetadata class]
                                   errorType:[DBFILESDownloadError class]
-                                      attrs:@{
-                                        @"host" : @"content",
-                                        @"style" : @"download"
-                                      }
+                                      attrs:@{@"host" : @"content", @"style" : @"download"}
                            arraySerialBlock:nil
                          arrayDeserialBlock:nil];
   }
@@ -335,10 +299,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                     deprecated:@NO
                                     resultType:[DBFILESMetadata class]
                                      errorType:[DBFILESGetMetadataError class]
-                                         attrs:@{
-                                           @"host" : @"api",
-                                           @"style" : @"rpc"
-                                         }
+                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                               arraySerialBlock:nil
                             arrayDeserialBlock:nil];
   }
@@ -352,10 +313,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                    deprecated:@NO
                                    resultType:[DBFILESFileMetadata class]
                                     errorType:[DBFILESPreviewError class]
-                                        attrs:@{
-                                          @"host" : @"content",
-                                          @"style" : @"download"
-                                        }
+                                        attrs:@{@"host" : @"content", @"style" : @"download"}
                              arraySerialBlock:nil
                            arrayDeserialBlock:nil];
   }
@@ -369,10 +327,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                          deprecated:@NO
                                          resultType:[DBFILESGetTemporaryLinkResult class]
                                           errorType:[DBFILESGetTemporaryLinkError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -386,10 +341,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                      deprecated:@NO
                                      resultType:[DBFILESFileMetadata class]
                                       errorType:[DBFILESThumbnailError class]
-                                          attrs:@{
-                                            @"host" : @"content",
-                                            @"style" : @"download"
-                                          }
+                                          attrs:@{@"host" : @"content", @"style" : @"download"}
                                arraySerialBlock:nil
                              arrayDeserialBlock:nil];
   }
@@ -403,10 +355,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                    deprecated:@NO
                                    resultType:[DBFILESListFolderResult class]
                                     errorType:[DBFILESListFolderError class]
-                                        attrs:@{
-                                          @"host" : @"api",
-                                          @"style" : @"rpc"
-                                        }
+                                        attrs:@{@"host" : @"api", @"style" : @"rpc"}
                              arraySerialBlock:nil
                            arrayDeserialBlock:nil];
   }
@@ -420,10 +369,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                            deprecated:@NO
                                            resultType:[DBFILESListFolderResult class]
                                             errorType:[DBFILESListFolderContinueError class]
-                                                attrs:@{
-                                                  @"host" : @"api",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -437,10 +383,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                                   deprecated:@NO
                                                   resultType:[DBFILESListFolderGetLatestCursorResult class]
                                                    errorType:[DBFILESListFolderError class]
-                                                       attrs:@{
-                                                         @"host" : @"api",
-                                                         @"style" : @"rpc"
-                                                       }
+                                                       attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                             arraySerialBlock:nil
                                           arrayDeserialBlock:nil];
   }
@@ -454,10 +397,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                            deprecated:@NO
                                            resultType:[DBFILESListFolderLongpollResult class]
                                             errorType:[DBFILESListFolderLongpollError class]
-                                                attrs:@{
-                                                  @"host" : @"notify",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"notify", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -471,10 +411,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                       deprecated:@NO
                                       resultType:[DBFILESListRevisionsResult class]
                                        errorType:[DBFILESListRevisionsError class]
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -488,10 +425,7 @@ static DBRoute *DBFILESUploadSessionStart;
                              deprecated:@NO
                              resultType:[DBFILESMetadata class]
                               errorType:[DBFILESRelocationError class]
-                                  attrs:@{
-                                    @"host" : @"api",
-                                    @"style" : @"rpc"
-                                  }
+                                  attrs:@{@"host" : @"api", @"style" : @"rpc"}
                        arraySerialBlock:nil
                      arrayDeserialBlock:nil];
   }
@@ -505,10 +439,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                   deprecated:@NO
                                   resultType:[DBASYNCLaunchEmptyResult class]
                                    errorType:nil
-                                       attrs:@{
-                                         @"host" : @"api",
-                                         @"style" : @"rpc"
-                                       }
+                                       attrs:@{@"host" : @"api", @"style" : @"rpc"}
                             arraySerialBlock:nil
                           arrayDeserialBlock:nil];
   }
@@ -522,10 +453,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                        deprecated:@NO
                                        resultType:[DBFILESRelocationBatchJobStatus class]
                                         errorType:[DBASYNCPollError class]
-                                            attrs:@{
-                                              @"host" : @"api",
-                                              @"style" : @"rpc"
-                                            }
+                                            attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                  arraySerialBlock:nil
                                arrayDeserialBlock:nil];
   }
@@ -539,10 +467,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                           deprecated:@NO
                                           resultType:nil
                                            errorType:[DBFILESDeleteError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -556,10 +481,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                       deprecated:@NO
                                       resultType:nil
                                        errorType:[DBFILESAddPropertiesError class]
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -573,10 +495,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                             deprecated:@NO
                                             resultType:nil
                                              errorType:[DBFILESInvalidPropertyGroupError class]
-                                                 attrs:@{
-                                                   @"host" : @"api",
-                                                   @"style" : @"rpc"
-                                                 }
+                                                 attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -590,10 +509,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                          deprecated:@NO
                                          resultType:nil
                                           errorType:[DBFILESRemovePropertiesError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -607,10 +523,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                               deprecated:@NO
                                               resultType:[DBPROPERTIESGetPropertyTemplateResult class]
                                                errorType:[DBPROPERTIESPropertyTemplateError class]
-                                                   attrs:@{
-                                                     @"host" : @"api",
-                                                     @"style" : @"rpc"
-                                                   }
+                                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -624,10 +537,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                                deprecated:@NO
                                                resultType:[DBPROPERTIESListPropertyTemplateIds class]
                                                 errorType:[DBPROPERTIESPropertyTemplateError class]
-                                                    attrs:@{
-                                                      @"host" : @"api",
-                                                      @"style" : @"rpc"
-                                                    }
+                                                    attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                          arraySerialBlock:nil
                                        arrayDeserialBlock:nil];
   }
@@ -641,10 +551,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                          deprecated:@NO
                                          resultType:nil
                                           errorType:[DBFILESUpdatePropertiesError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -658,10 +565,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                 deprecated:@NO
                                 resultType:[DBFILESFileMetadata class]
                                  errorType:[DBFILESRestoreError class]
-                                     attrs:@{
-                                       @"host" : @"api",
-                                       @"style" : @"rpc"
-                                     }
+                                     attrs:@{@"host" : @"api", @"style" : @"rpc"}
                           arraySerialBlock:nil
                         arrayDeserialBlock:nil];
   }
@@ -675,10 +579,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                 deprecated:@NO
                                 resultType:[DBFILESSaveUrlResult class]
                                  errorType:[DBFILESSaveUrlError class]
-                                     attrs:@{
-                                       @"host" : @"api",
-                                       @"style" : @"rpc"
-                                     }
+                                     attrs:@{@"host" : @"api", @"style" : @"rpc"}
                           arraySerialBlock:nil
                         arrayDeserialBlock:nil];
   }
@@ -692,10 +593,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                               deprecated:@NO
                                               resultType:[DBFILESSaveUrlJobStatus class]
                                                errorType:[DBASYNCPollError class]
-                                                   attrs:@{
-                                                     @"host" : @"api",
-                                                     @"style" : @"rpc"
-                                                   }
+                                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -709,10 +607,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                deprecated:@NO
                                resultType:[DBFILESSearchResult class]
                                 errorType:[DBFILESSearchError class]
-                                    attrs:@{
-                                      @"host" : @"api",
-                                      @"style" : @"rpc"
-                                    }
+                                    attrs:@{@"host" : @"api", @"style" : @"rpc"}
                          arraySerialBlock:nil
                        arrayDeserialBlock:nil];
   }
@@ -726,10 +621,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                deprecated:@NO
                                resultType:[DBFILESFileMetadata class]
                                 errorType:[DBFILESUploadError class]
-                                    attrs:@{
-                                      @"host" : @"content",
-                                      @"style" : @"upload"
-                                    }
+                                    attrs:@{@"host" : @"content", @"style" : @"upload"}
                          arraySerialBlock:nil
                        arrayDeserialBlock:nil];
   }
@@ -743,10 +635,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                             deprecated:@YES
                                             resultType:nil
                                              errorType:[DBFILESUploadSessionLookupError class]
-                                                 attrs:@{
-                                                   @"host" : @"content",
-                                                   @"style" : @"upload"
-                                                 }
+                                                 attrs:@{@"host" : @"content", @"style" : @"upload"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -760,10 +649,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                               deprecated:@NO
                                               resultType:nil
                                                errorType:[DBFILESUploadSessionLookupError class]
-                                                   attrs:@{
-                                                     @"host" : @"content",
-                                                     @"style" : @"upload"
-                                                   }
+                                                   attrs:@{@"host" : @"content", @"style" : @"upload"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -777,10 +663,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                             deprecated:@NO
                                             resultType:[DBFILESFileMetadata class]
                                              errorType:[DBFILESUploadSessionFinishError class]
-                                                 attrs:@{
-                                                   @"host" : @"content",
-                                                   @"style" : @"upload"
-                                                 }
+                                                 attrs:@{@"host" : @"content", @"style" : @"upload"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -794,10 +677,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                                  deprecated:@NO
                                                  resultType:[DBASYNCLaunchEmptyResult class]
                                                   errorType:nil
-                                                      attrs:@{
-                                                        @"host" : @"api",
-                                                        @"style" : @"rpc"
-                                                      }
+                                                      attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                            arraySerialBlock:nil
                                          arrayDeserialBlock:nil];
   }
@@ -811,10 +691,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                                       deprecated:@NO
                                                       resultType:[DBFILESUploadSessionFinishBatchJobStatus class]
                                                        errorType:[DBASYNCPollError class]
-                                                           attrs:@{
-                                                             @"host" : @"api",
-                                                             @"style" : @"rpc"
-                                                           }
+                                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                 arraySerialBlock:nil
                                               arrayDeserialBlock:nil];
   }
@@ -828,10 +705,7 @@ static DBRoute *DBFILESUploadSessionStart;
                                            deprecated:@NO
                                            resultType:[DBFILESUploadSessionStartResult class]
                                             errorType:nil
-                                                attrs:@{
-                                                  @"host" : @"content",
-                                                  @"style" : @"upload"
-                                                }
+                                                attrs:@{@"host" : @"content", @"style" : @"upload"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }

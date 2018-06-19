@@ -33,9 +33,8 @@ static DropboxTeamClient *authorizedTeamClient;
 }
 
 + (void)setupWithOAuthManager:(DBOAuthManager *)oAuthManager transportClient:(DBTransportClient *)transportClient {
-  NSAssert(
-      [DBOAuthManager sharedOAuthManager] == nil,
-      @"Only call `[DropboxClientsManager setupWithAppKey]` or `[DropboxClientsManager setupWithTeamAppKey]` once");
+  NSAssert([DBOAuthManager sharedOAuthManager] == nil, @"Only call `[DropboxClientsManager setupWithAppKey]` or "
+                                                       @"`[DropboxClientsManager setupWithTeamAppKey]` once");
   [DBOAuthManager sharedOAuthManager:oAuthManager];
 
   DBAccessToken *accessToken = [[DBOAuthManager sharedOAuthManager] getFirstAccessToken];
@@ -55,9 +54,8 @@ static DropboxTeamClient *authorizedTeamClient;
 }
 
 + (void)setupWithOAuthManagerTeam:(DBOAuthManager *)oAuthManager transportClient:(DBTransportClient *)transportClient {
-  NSAssert(
-      [DBOAuthManager sharedOAuthManager] == nil,
-      @"Only call `[DropboxClientsManager setupWithAppKey]` or `[DropboxClientsManager setupWithTeamAppKey]` once");
+  NSAssert([DBOAuthManager sharedOAuthManager] == nil, @"Only call `[DropboxClientsManager setupWithAppKey]` or "
+                                                       @"`[DropboxClientsManager setupWithTeamAppKey]` once");
   [DBOAuthManager sharedOAuthManager:oAuthManager];
 
   DBAccessToken *accessToken = [[DBOAuthManager sharedOAuthManager] getFirstAccessToken];

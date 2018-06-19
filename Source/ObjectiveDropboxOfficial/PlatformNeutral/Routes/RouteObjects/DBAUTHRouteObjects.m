@@ -21,10 +21,7 @@ static DBRoute *DBAUTHTokenRevoke;
                                    deprecated:@NO
                                    resultType:nil
                                     errorType:nil
-                                        attrs:@{
-                                          @"host" : @"api",
-                                          @"style" : @"rpc"
-                                        }
+                                        attrs:@{@"host" : @"api", @"style" : @"rpc"}
                              arraySerialBlock:nil
                            arrayDeserialBlock:nil];
   }

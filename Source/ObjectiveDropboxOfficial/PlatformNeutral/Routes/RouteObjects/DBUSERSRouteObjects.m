@@ -34,10 +34,7 @@ static DBRoute *DBUSERSGetSpaceUsage;
                                    deprecated:@NO
                                    resultType:[DBUSERSBasicAccount class]
                                     errorType:[DBUSERSGetAccountError class]
-                                        attrs:@{
-                                          @"host" : @"api",
-                                          @"style" : @"rpc"
-                                        }
+                                        attrs:@{@"host" : @"api", @"style" : @"rpc"}
                              arraySerialBlock:nil
                            arrayDeserialBlock:nil];
   }
@@ -47,21 +44,18 @@ static DBRoute *DBUSERSGetSpaceUsage;
 + (DBRoute *)DBUSERSGetAccountBatch {
   if (!DBUSERSGetAccountBatch) {
     DBUSERSGetAccountBatch = [[DBRoute alloc] init:@"get_account_batch"
-        namespace_:@"users"
-        deprecated:@NO
-        resultType:[NSArray<DBUSERSBasicAccount *> class]
-        errorType:[DBUSERSGetAccountBatchError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBUSERSBasicAccountSerializer deserialize:elem];
-                                      }];
-        }];
+                                        namespace_:@"users"
+                                        deprecated:@NO
+                                        resultType:[NSArray<DBUSERSBasicAccount *> class]
+                                         errorType:[DBUSERSGetAccountBatchError class]
+                                             attrs:@{@"host" : @"api", @"style" : @"rpc"}
+                                  arraySerialBlock:nil
+                                arrayDeserialBlock:^id(id array) {
+                                  return [DBArraySerializer deserialize:array
+                                                              withBlock:^id(id elem) {
+                                                                return [DBUSERSBasicAccountSerializer deserialize:elem];
+                                                              }];
+                                }];
   }
   return DBUSERSGetAccountBatch;
 }
@@ -73,10 +67,7 @@ static DBRoute *DBUSERSGetSpaceUsage;
                                           deprecated:@NO
                                           resultType:[DBUSERSFullAccount class]
                                            errorType:nil
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -90,10 +81,7 @@ static DBRoute *DBUSERSGetSpaceUsage;
                                       deprecated:@NO
                                       resultType:[DBUSERSSpaceUsage class]
                                        errorType:nil
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }

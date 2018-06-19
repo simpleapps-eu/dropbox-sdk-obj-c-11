@@ -161,10 +161,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                          deprecated:@NO
                                          resultType:[DBTEAMGroupFullInfo class]
                                           errorType:[DBTEAMGroupCreateError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -173,22 +170,20 @@ static DBRoute *DBTEAMReportsGetStorage;
 
 + (DBRoute *)DBTEAMAlphaGroupsGetInfo {
   if (!DBTEAMAlphaGroupsGetInfo) {
-    DBTEAMAlphaGroupsGetInfo = [[DBRoute alloc] init:@"alpha/groups/get_info"
-        namespace_:@"team"
-        deprecated:@NO
-        resultType:[NSArray<DBTEAMGroupsGetInfoItem *> class]
-        errorType:[DBTEAMGroupsGetInfoError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBTEAMGroupsGetInfoItemSerializer deserialize:elem];
-                                      }];
-        }];
+    DBTEAMAlphaGroupsGetInfo =
+        [[DBRoute alloc] init:@"alpha/groups/get_info"
+                    namespace_:@"team"
+                    deprecated:@NO
+                    resultType:[NSArray<DBTEAMGroupsGetInfoItem *> class]
+                     errorType:[DBTEAMGroupsGetInfoError class]
+                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
+              arraySerialBlock:nil
+            arrayDeserialBlock:^id(id array) {
+              return [DBArraySerializer deserialize:array
+                                          withBlock:^id(id elem) {
+                                            return [DBTEAMGroupsGetInfoItemSerializer deserialize:elem];
+                                          }];
+            }];
   }
   return DBTEAMAlphaGroupsGetInfo;
 }
@@ -200,10 +195,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                        deprecated:@NO
                                        resultType:[DBTEAMGroupsListResult class]
                                         errorType:nil
-                                            attrs:@{
-                                              @"host" : @"api",
-                                              @"style" : @"rpc"
-                                            }
+                                            attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                  arraySerialBlock:nil
                                arrayDeserialBlock:nil];
   }
@@ -217,10 +209,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                deprecated:@NO
                                                resultType:[DBTEAMGroupsListResult class]
                                                 errorType:[DBTEAMGroupsListContinueError class]
-                                                    attrs:@{
-                                                      @"host" : @"api",
-                                                      @"style" : @"rpc"
-                                                    }
+                                                    attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                          arraySerialBlock:nil
                                        arrayDeserialBlock:nil];
   }
@@ -234,10 +223,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                          deprecated:@NO
                                          resultType:[DBTEAMGroupFullInfo class]
                                           errorType:[DBTEAMGroupUpdateError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -251,10 +237,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                 deprecated:@NO
                                                 resultType:[DBTEAMListMemberDevicesResult class]
                                                  errorType:[DBTEAMListMemberDevicesError class]
-                                                     attrs:@{
-                                                       @"host" : @"api",
-                                                       @"style" : @"rpc"
-                                                     }
+                                                     attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                           arraySerialBlock:nil
                                         arrayDeserialBlock:nil];
   }
@@ -268,10 +251,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                  deprecated:@NO
                                                  resultType:[DBTEAMListMembersDevicesResult class]
                                                   errorType:[DBTEAMListMembersDevicesError class]
-                                                      attrs:@{
-                                                        @"host" : @"api",
-                                                        @"style" : @"rpc"
-                                                      }
+                                                      attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                            arraySerialBlock:nil
                                          arrayDeserialBlock:nil];
   }
@@ -285,10 +265,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                               deprecated:@YES
                                               resultType:[DBTEAMListTeamDevicesResult class]
                                                errorType:[DBTEAMListTeamDevicesError class]
-                                                   attrs:@{
-                                                     @"host" : @"api",
-                                                     @"style" : @"rpc"
-                                                   }
+                                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -302,10 +279,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                   deprecated:@NO
                                                   resultType:nil
                                                    errorType:[DBTEAMRevokeDeviceSessionError class]
-                                                       attrs:@{
-                                                         @"host" : @"api",
-                                                         @"style" : @"rpc"
-                                                       }
+                                                       attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                             arraySerialBlock:nil
                                           arrayDeserialBlock:nil];
   }
@@ -319,10 +293,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                        deprecated:@NO
                                                        resultType:[DBTEAMRevokeDeviceSessionBatchResult class]
                                                         errorType:[DBTEAMRevokeDeviceSessionBatchError class]
-                                                            attrs:@{
-                                                              @"host" : @"api",
-                                                              @"style" : @"rpc"
-                                                            }
+                                                            attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                  arraySerialBlock:nil
                                                arrayDeserialBlock:nil];
   }
@@ -336,10 +307,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                deprecated:@NO
                                resultType:[DBTEAMTeamGetInfoResult class]
                                 errorType:nil
-                                    attrs:@{
-                                      @"host" : @"api",
-                                      @"style" : @"rpc"
-                                    }
+                                    attrs:@{@"host" : @"api", @"style" : @"rpc"}
                          arraySerialBlock:nil
                        arrayDeserialBlock:nil];
   }
@@ -353,10 +321,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                     deprecated:@NO
                                     resultType:[DBTEAMGroupFullInfo class]
                                      errorType:[DBTEAMGroupCreateError class]
-                                         attrs:@{
-                                           @"host" : @"api",
-                                           @"style" : @"rpc"
-                                         }
+                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                               arraySerialBlock:nil
                             arrayDeserialBlock:nil];
   }
@@ -370,10 +335,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                     deprecated:@NO
                                     resultType:[DBASYNCLaunchEmptyResult class]
                                      errorType:[DBTEAMGroupDeleteError class]
-                                         attrs:@{
-                                           @"host" : @"api",
-                                           @"style" : @"rpc"
-                                         }
+                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                               arraySerialBlock:nil
                             arrayDeserialBlock:nil];
   }
@@ -382,22 +344,20 @@ static DBRoute *DBTEAMReportsGetStorage;
 
 + (DBRoute *)DBTEAMGroupsGetInfo {
   if (!DBTEAMGroupsGetInfo) {
-    DBTEAMGroupsGetInfo = [[DBRoute alloc] init:@"groups/get_info"
-        namespace_:@"team"
-        deprecated:@NO
-        resultType:[NSArray<DBTEAMGroupsGetInfoItem *> class]
-        errorType:[DBTEAMGroupsGetInfoError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBTEAMGroupsGetInfoItemSerializer deserialize:elem];
-                                      }];
-        }];
+    DBTEAMGroupsGetInfo =
+        [[DBRoute alloc] init:@"groups/get_info"
+                    namespace_:@"team"
+                    deprecated:@NO
+                    resultType:[NSArray<DBTEAMGroupsGetInfoItem *> class]
+                     errorType:[DBTEAMGroupsGetInfoError class]
+                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
+              arraySerialBlock:nil
+            arrayDeserialBlock:^id(id array) {
+              return [DBArraySerializer deserialize:array
+                                          withBlock:^id(id elem) {
+                                            return [DBTEAMGroupsGetInfoItemSerializer deserialize:elem];
+                                          }];
+            }];
   }
   return DBTEAMGroupsGetInfo;
 }
@@ -409,10 +369,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                           deprecated:@NO
                                           resultType:[DBASYNCPollEmptyResult class]
                                            errorType:[DBTEAMGroupsPollError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -426,10 +383,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                   deprecated:@NO
                                   resultType:[DBTEAMGroupsListResult class]
                                    errorType:nil
-                                       attrs:@{
-                                         @"host" : @"api",
-                                         @"style" : @"rpc"
-                                       }
+                                       attrs:@{@"host" : @"api", @"style" : @"rpc"}
                             arraySerialBlock:nil
                           arrayDeserialBlock:nil];
   }
@@ -443,10 +397,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                           deprecated:@NO
                                           resultType:[DBTEAMGroupsListResult class]
                                            errorType:[DBTEAMGroupsListContinueError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -460,10 +411,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                         deprecated:@NO
                                         resultType:[DBTEAMGroupMembersChangeResult class]
                                          errorType:[DBTEAMGroupMembersAddError class]
-                                             attrs:@{
-                                               @"host" : @"api",
-                                               @"style" : @"rpc"
-                                             }
+                                             attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                   arraySerialBlock:nil
                                 arrayDeserialBlock:nil];
   }
@@ -477,10 +425,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                          deprecated:@NO
                                          resultType:[DBTEAMGroupsMembersListResult class]
                                           errorType:[DBTEAMGroupSelectorError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -494,10 +439,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                  deprecated:@NO
                                                  resultType:[DBTEAMGroupsMembersListResult class]
                                                   errorType:[DBTEAMGroupsMembersListContinueError class]
-                                                      attrs:@{
-                                                        @"host" : @"api",
-                                                        @"style" : @"rpc"
-                                                      }
+                                                      attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                            arraySerialBlock:nil
                                          arrayDeserialBlock:nil];
   }
@@ -511,10 +453,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                            deprecated:@NO
                                            resultType:[DBTEAMGroupMembersChangeResult class]
                                             errorType:[DBTEAMGroupMembersRemoveError class]
-                                                attrs:@{
-                                                  @"host" : @"api",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -523,22 +462,20 @@ static DBRoute *DBTEAMReportsGetStorage;
 
 + (DBRoute *)DBTEAMGroupsMembersSetAccessType {
   if (!DBTEAMGroupsMembersSetAccessType) {
-    DBTEAMGroupsMembersSetAccessType = [[DBRoute alloc] init:@"groups/members/set_access_type"
-        namespace_:@"team"
-        deprecated:@NO
-        resultType:[NSArray<DBTEAMGroupsGetInfoItem *> class]
-        errorType:[DBTEAMGroupMemberSetAccessTypeError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBTEAMGroupsGetInfoItemSerializer deserialize:elem];
-                                      }];
-        }];
+    DBTEAMGroupsMembersSetAccessType =
+        [[DBRoute alloc] init:@"groups/members/set_access_type"
+                    namespace_:@"team"
+                    deprecated:@NO
+                    resultType:[NSArray<DBTEAMGroupsGetInfoItem *> class]
+                     errorType:[DBTEAMGroupMemberSetAccessTypeError class]
+                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
+              arraySerialBlock:nil
+            arrayDeserialBlock:^id(id array) {
+              return [DBArraySerializer deserialize:array
+                                          withBlock:^id(id elem) {
+                                            return [DBTEAMGroupsGetInfoItemSerializer deserialize:elem];
+                                          }];
+            }];
   }
   return DBTEAMGroupsMembersSetAccessType;
 }
@@ -550,10 +487,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                     deprecated:@NO
                                     resultType:[DBTEAMGroupFullInfo class]
                                      errorType:[DBTEAMGroupUpdateError class]
-                                         attrs:@{
-                                           @"host" : @"api",
-                                           @"style" : @"rpc"
-                                         }
+                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                               arraySerialBlock:nil
                             arrayDeserialBlock:nil];
   }
@@ -567,10 +501,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                       deprecated:@NO
                                                       resultType:[DBTEAMListMemberAppsResult class]
                                                        errorType:[DBTEAMListMemberAppsError class]
-                                                           attrs:@{
-                                                             @"host" : @"api",
-                                                             @"style" : @"rpc"
-                                                           }
+                                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                 arraySerialBlock:nil
                                               arrayDeserialBlock:nil];
   }
@@ -584,10 +515,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                        deprecated:@NO
                                                        resultType:[DBTEAMListMembersAppsResult class]
                                                         errorType:[DBTEAMListMembersAppsError class]
-                                                            attrs:@{
-                                                              @"host" : @"api",
-                                                              @"style" : @"rpc"
-                                                            }
+                                                            attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                  arraySerialBlock:nil
                                                arrayDeserialBlock:nil];
   }
@@ -601,10 +529,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                     deprecated:@YES
                                                     resultType:[DBTEAMListTeamAppsResult class]
                                                      errorType:[DBTEAMListTeamAppsError class]
-                                                         attrs:@{
-                                                           @"host" : @"api",
-                                                           @"style" : @"rpc"
-                                                         }
+                                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                               arraySerialBlock:nil
                                             arrayDeserialBlock:nil];
   }
@@ -618,10 +543,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                  deprecated:@NO
                                                  resultType:nil
                                                   errorType:[DBTEAMRevokeLinkedAppError class]
-                                                      attrs:@{
-                                                        @"host" : @"api",
-                                                        @"style" : @"rpc"
-                                                      }
+                                                      attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                            arraySerialBlock:nil
                                          arrayDeserialBlock:nil];
   }
@@ -635,10 +557,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                       deprecated:@NO
                                                       resultType:[DBTEAMRevokeLinkedAppBatchResult class]
                                                        errorType:[DBTEAMRevokeLinkedAppBatchError class]
-                                                           attrs:@{
-                                                             @"host" : @"api",
-                                                             @"style" : @"rpc"
-                                                           }
+                                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                 arraySerialBlock:nil
                                               arrayDeserialBlock:nil];
   }
@@ -652,10 +571,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                   deprecated:@NO
                                   resultType:[DBTEAMMembersAddLaunch class]
                                    errorType:nil
-                                       attrs:@{
-                                         @"host" : @"api",
-                                         @"style" : @"rpc"
-                                       }
+                                       attrs:@{@"host" : @"api", @"style" : @"rpc"}
                             arraySerialBlock:nil
                           arrayDeserialBlock:nil];
   }
@@ -669,10 +585,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                               deprecated:@NO
                                               resultType:[DBTEAMMembersAddJobStatus class]
                                                errorType:[DBASYNCPollError class]
-                                                   attrs:@{
-                                                     @"host" : @"api",
-                                                     @"style" : @"rpc"
-                                                   }
+                                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -681,22 +594,20 @@ static DBRoute *DBTEAMReportsGetStorage;
 
 + (DBRoute *)DBTEAMMembersGetInfo {
   if (!DBTEAMMembersGetInfo) {
-    DBTEAMMembersGetInfo = [[DBRoute alloc] init:@"members/get_info"
-        namespace_:@"team"
-        deprecated:@NO
-        resultType:[NSArray<DBTEAMMembersGetInfoItem *> class]
-        errorType:[DBTEAMMembersGetInfoError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBTEAMMembersGetInfoItemSerializer deserialize:elem];
-                                      }];
-        }];
+    DBTEAMMembersGetInfo =
+        [[DBRoute alloc] init:@"members/get_info"
+                    namespace_:@"team"
+                    deprecated:@NO
+                    resultType:[NSArray<DBTEAMMembersGetInfoItem *> class]
+                     errorType:[DBTEAMMembersGetInfoError class]
+                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
+              arraySerialBlock:nil
+            arrayDeserialBlock:^id(id array) {
+              return [DBArraySerializer deserialize:array
+                                          withBlock:^id(id elem) {
+                                            return [DBTEAMMembersGetInfoItemSerializer deserialize:elem];
+                                          }];
+            }];
   }
   return DBTEAMMembersGetInfo;
 }
@@ -708,10 +619,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                    deprecated:@NO
                                    resultType:[DBTEAMMembersListResult class]
                                     errorType:[DBTEAMMembersListError class]
-                                        attrs:@{
-                                          @"host" : @"api",
-                                          @"style" : @"rpc"
-                                        }
+                                        attrs:@{@"host" : @"api", @"style" : @"rpc"}
                              arraySerialBlock:nil
                            arrayDeserialBlock:nil];
   }
@@ -725,10 +633,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                            deprecated:@NO
                                            resultType:[DBTEAMMembersListResult class]
                                             errorType:[DBTEAMMembersListContinueError class]
-                                                attrs:@{
-                                                  @"host" : @"api",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -742,10 +647,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                       deprecated:@NO
                                       resultType:nil
                                        errorType:[DBTEAMMembersRecoverError class]
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -759,10 +661,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                      deprecated:@NO
                                      resultType:[DBASYNCLaunchEmptyResult class]
                                       errorType:[DBTEAMMembersRemoveError class]
-                                          attrs:@{
-                                            @"host" : @"api",
-                                            @"style" : @"rpc"
-                                          }
+                                          attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                arraySerialBlock:nil
                              arrayDeserialBlock:nil];
   }
@@ -776,10 +675,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                  deprecated:@NO
                                                  resultType:[DBASYNCPollEmptyResult class]
                                                   errorType:[DBASYNCPollError class]
-                                                      attrs:@{
-                                                        @"host" : @"api",
-                                                        @"style" : @"rpc"
-                                                      }
+                                                      attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                            arraySerialBlock:nil
                                          arrayDeserialBlock:nil];
   }
@@ -793,10 +689,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                deprecated:@NO
                                                resultType:nil
                                                 errorType:[DBTEAMMembersSendWelcomeError class]
-                                                    attrs:@{
-                                                      @"host" : @"api",
-                                                      @"style" : @"rpc"
-                                                    }
+                                                    attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                          arraySerialBlock:nil
                                        arrayDeserialBlock:nil];
   }
@@ -810,10 +703,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                   deprecated:@NO
                                                   resultType:[DBTEAMMembersSetPermissionsResult class]
                                                    errorType:[DBTEAMMembersSetPermissionsError class]
-                                                       attrs:@{
-                                                         @"host" : @"api",
-                                                         @"style" : @"rpc"
-                                                       }
+                                                       attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                             arraySerialBlock:nil
                                           arrayDeserialBlock:nil];
   }
@@ -827,10 +717,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                          deprecated:@NO
                                          resultType:[DBTEAMTeamMemberInfo class]
                                           errorType:[DBTEAMMembersSetProfileError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -844,10 +731,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                       deprecated:@NO
                                       resultType:nil
                                        errorType:[DBTEAMMembersSuspendError class]
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -861,10 +745,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                         deprecated:@NO
                                         resultType:nil
                                          errorType:[DBTEAMMembersUnsuspendError class]
-                                             attrs:@{
-                                               @"host" : @"api",
-                                               @"style" : @"rpc"
-                                             }
+                                             attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                   arraySerialBlock:nil
                                 arrayDeserialBlock:nil];
   }
@@ -878,10 +759,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                              deprecated:@NO
                                              resultType:[DBTEAMAddPropertyTemplateResult class]
                                               errorType:[DBPROPERTIESModifyPropertyTemplateError class]
-                                                  attrs:@{
-                                                    @"host" : @"api",
-                                                    @"style" : @"rpc"
-                                                  }
+                                                  attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                        arraySerialBlock:nil
                                      arrayDeserialBlock:nil];
   }
@@ -895,10 +773,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                              deprecated:@NO
                                              resultType:[DBPROPERTIESGetPropertyTemplateResult class]
                                               errorType:[DBPROPERTIESPropertyTemplateError class]
-                                                  attrs:@{
-                                                    @"host" : @"api",
-                                                    @"style" : @"rpc"
-                                                  }
+                                                  attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                        arraySerialBlock:nil
                                      arrayDeserialBlock:nil];
   }
@@ -912,10 +787,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                               deprecated:@NO
                                               resultType:[DBPROPERTIESListPropertyTemplateIds class]
                                                errorType:[DBPROPERTIESPropertyTemplateError class]
-                                                   attrs:@{
-                                                     @"host" : @"api",
-                                                     @"style" : @"rpc"
-                                                   }
+                                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -929,10 +801,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                                 deprecated:@NO
                                                 resultType:[DBTEAMUpdatePropertyTemplateResult class]
                                                  errorType:[DBPROPERTIESModifyPropertyTemplateError class]
-                                                     attrs:@{
-                                                       @"host" : @"api",
-                                                       @"style" : @"rpc"
-                                                     }
+                                                     attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                           arraySerialBlock:nil
                                         arrayDeserialBlock:nil];
   }
@@ -946,10 +815,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                           deprecated:@NO
                                           resultType:[DBTEAMGetActivityReport class]
                                            errorType:[DBTEAMDateRangeError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -963,10 +829,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                          deprecated:@NO
                                          resultType:[DBTEAMGetDevicesReport class]
                                           errorType:[DBTEAMDateRangeError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -980,10 +843,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                             deprecated:@NO
                                             resultType:[DBTEAMGetMembershipReport class]
                                              errorType:[DBTEAMDateRangeError class]
-                                                 attrs:@{
-                                                   @"host" : @"api",
-                                                   @"style" : @"rpc"
-                                                 }
+                                                 attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -997,10 +857,7 @@ static DBRoute *DBTEAMReportsGetStorage;
                                          deprecated:@NO
                                          resultType:[DBTEAMGetStorageReport class]
                                           errorType:[DBTEAMDateRangeError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }

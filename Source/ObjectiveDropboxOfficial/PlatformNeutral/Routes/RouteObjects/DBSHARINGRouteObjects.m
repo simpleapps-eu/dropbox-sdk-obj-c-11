@@ -139,22 +139,20 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
 
 + (DBRoute *)DBSHARINGAddFileMember {
   if (!DBSHARINGAddFileMember) {
-    DBSHARINGAddFileMember = [[DBRoute alloc] init:@"add_file_member"
-        namespace_:@"sharing"
-        deprecated:@NO
-        resultType:[NSArray<DBSHARINGFileMemberActionResult *> class]
-        errorType:[DBSHARINGAddFileMemberError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBSHARINGFileMemberActionResultSerializer deserialize:elem];
-                                      }];
-        }];
+    DBSHARINGAddFileMember =
+        [[DBRoute alloc] init:@"add_file_member"
+                    namespace_:@"sharing"
+                    deprecated:@NO
+                    resultType:[NSArray<DBSHARINGFileMemberActionResult *> class]
+                     errorType:[DBSHARINGAddFileMemberError class]
+                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
+              arraySerialBlock:nil
+            arrayDeserialBlock:^id(id array) {
+              return [DBArraySerializer deserialize:array
+                                          withBlock:^id(id elem) {
+                                            return [DBSHARINGFileMemberActionResultSerializer deserialize:elem];
+                                          }];
+            }];
   }
   return DBSHARINGAddFileMember;
 }
@@ -166,10 +164,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                           deprecated:@NO
                                           resultType:nil
                                            errorType:[DBSHARINGAddFolderMemberError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -183,10 +178,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                  deprecated:@NO
                                                  resultType:[DBSHARINGFileMemberActionResult class]
                                                   errorType:[DBSHARINGFileMemberActionError class]
-                                                      attrs:@{
-                                                        @"host" : @"api",
-                                                        @"style" : @"rpc"
-                                                      }
+                                                      attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                            arraySerialBlock:nil
                                          arrayDeserialBlock:nil];
   }
@@ -200,10 +192,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                          deprecated:@NO
                                          resultType:[DBSHARINGJobStatus class]
                                           errorType:[DBASYNCPollError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -217,10 +206,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                      deprecated:@NO
                                                      resultType:[DBSHARINGRemoveMemberJobStatus class]
                                                       errorType:[DBASYNCPollError class]
-                                                          attrs:@{
-                                                            @"host" : @"api",
-                                                            @"style" : @"rpc"
-                                                          }
+                                                          attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                arraySerialBlock:nil
                                              arrayDeserialBlock:nil];
   }
@@ -234,10 +220,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                               deprecated:@NO
                                               resultType:[DBSHARINGShareFolderJobStatus class]
                                                errorType:[DBASYNCPollError class]
-                                                   attrs:@{
-                                                     @"host" : @"api",
-                                                     @"style" : @"rpc"
-                                                   }
+                                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -251,10 +234,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                            deprecated:@YES
                                            resultType:[DBSHARINGPathLinkMetadata class]
                                             errorType:[DBSHARINGCreateSharedLinkError class]
-                                                attrs:@{
-                                                  @"host" : @"api",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -268,10 +248,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                        deprecated:@NO
                                                        resultType:[DBSHARINGSharedLinkMetadata class]
                                                         errorType:[DBSHARINGCreateSharedLinkWithSettingsError class]
-                                                            attrs:@{
-                                                              @"host" : @"api",
-                                                              @"style" : @"rpc"
-                                                            }
+                                                            attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                  arraySerialBlock:nil
                                                arrayDeserialBlock:nil];
   }
@@ -285,10 +262,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                           deprecated:@NO
                                           resultType:[DBSHARINGSharedFileMetadata class]
                                            errorType:[DBSHARINGGetFileMetadataError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -297,22 +271,20 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
 
 + (DBRoute *)DBSHARINGGetFileMetadataBatch {
   if (!DBSHARINGGetFileMetadataBatch) {
-    DBSHARINGGetFileMetadataBatch = [[DBRoute alloc] init:@"get_file_metadata/batch"
-        namespace_:@"sharing"
-        deprecated:@NO
-        resultType:[NSArray<DBSHARINGGetFileMetadataBatchResult *> class]
-        errorType:[DBSHARINGSharingUserError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBSHARINGGetFileMetadataBatchResultSerializer deserialize:elem];
-                                      }];
-        }];
+    DBSHARINGGetFileMetadataBatch =
+        [[DBRoute alloc] init:@"get_file_metadata/batch"
+                    namespace_:@"sharing"
+                    deprecated:@NO
+                    resultType:[NSArray<DBSHARINGGetFileMetadataBatchResult *> class]
+                     errorType:[DBSHARINGSharingUserError class]
+                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
+              arraySerialBlock:nil
+            arrayDeserialBlock:^id(id array) {
+              return [DBArraySerializer deserialize:array
+                                          withBlock:^id(id elem) {
+                                            return [DBSHARINGGetFileMetadataBatchResultSerializer deserialize:elem];
+                                          }];
+            }];
   }
   return DBSHARINGGetFileMetadataBatch;
 }
@@ -324,10 +296,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                             deprecated:@NO
                                             resultType:[DBSHARINGSharedFolderMetadata class]
                                              errorType:[DBSHARINGSharedFolderAccessError class]
-                                                 attrs:@{
-                                                   @"host" : @"api",
-                                                   @"style" : @"rpc"
-                                                 }
+                                                 attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -341,10 +310,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                             deprecated:@NO
                                             resultType:[DBSHARINGSharedLinkMetadata class]
                                              errorType:[DBSHARINGGetSharedLinkFileError class]
-                                                 attrs:@{
-                                                   @"host" : @"content",
-                                                   @"style" : @"download"
-                                                 }
+                                                 attrs:@{@"host" : @"content", @"style" : @"download"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -358,10 +324,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                 deprecated:@NO
                                                 resultType:[DBSHARINGSharedLinkMetadata class]
                                                  errorType:[DBSHARINGSharedLinkError class]
-                                                     attrs:@{
-                                                       @"host" : @"api",
-                                                       @"style" : @"rpc"
-                                                     }
+                                                     attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                           arraySerialBlock:nil
                                         arrayDeserialBlock:nil];
   }
@@ -375,10 +338,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                          deprecated:@YES
                                          resultType:[DBSHARINGGetSharedLinksResult class]
                                           errorType:[DBSHARINGGetSharedLinksError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -392,10 +352,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                           deprecated:@NO
                                           resultType:[DBSHARINGSharedFileMembers class]
                                            errorType:[DBSHARINGListFileMembersError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -404,22 +361,20 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
 
 + (DBRoute *)DBSHARINGListFileMembersBatch {
   if (!DBSHARINGListFileMembersBatch) {
-    DBSHARINGListFileMembersBatch = [[DBRoute alloc] init:@"list_file_members/batch"
-        namespace_:@"sharing"
-        deprecated:@NO
-        resultType:[NSArray<DBSHARINGListFileMembersBatchResult *> class]
-        errorType:[DBSHARINGSharingUserError class]
-        attrs:@{
-          @"host" : @"api",
-          @"style" : @"rpc"
-        }
-        arraySerialBlock:nil
-        arrayDeserialBlock:^id(id array) {
-          return [DBArraySerializer deserialize:array
-                                      withBlock:^id(id elem) {
-                                        return [DBSHARINGListFileMembersBatchResultSerializer deserialize:elem];
-                                      }];
-        }];
+    DBSHARINGListFileMembersBatch =
+        [[DBRoute alloc] init:@"list_file_members/batch"
+                    namespace_:@"sharing"
+                    deprecated:@NO
+                    resultType:[NSArray<DBSHARINGListFileMembersBatchResult *> class]
+                     errorType:[DBSHARINGSharingUserError class]
+                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
+              arraySerialBlock:nil
+            arrayDeserialBlock:^id(id array) {
+              return [DBArraySerializer deserialize:array
+                                          withBlock:^id(id elem) {
+                                            return [DBSHARINGListFileMembersBatchResultSerializer deserialize:elem];
+                                          }];
+            }];
   }
   return DBSHARINGListFileMembersBatch;
 }
@@ -431,10 +386,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                   deprecated:@NO
                                                   resultType:[DBSHARINGSharedFileMembers class]
                                                    errorType:[DBSHARINGListFileMembersContinueError class]
-                                                       attrs:@{
-                                                         @"host" : @"api",
-                                                         @"style" : @"rpc"
-                                                       }
+                                                       attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                             arraySerialBlock:nil
                                           arrayDeserialBlock:nil];
   }
@@ -448,10 +400,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                             deprecated:@NO
                                             resultType:[DBSHARINGSharedFolderMembers class]
                                              errorType:[DBSHARINGSharedFolderAccessError class]
-                                                 attrs:@{
-                                                   @"host" : @"api",
-                                                   @"style" : @"rpc"
-                                                 }
+                                                 attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -465,10 +414,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                     deprecated:@NO
                                                     resultType:[DBSHARINGSharedFolderMembers class]
                                                      errorType:[DBSHARINGListFolderMembersContinueError class]
-                                                         attrs:@{
-                                                           @"host" : @"api",
-                                                           @"style" : @"rpc"
-                                                         }
+                                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                               arraySerialBlock:nil
                                             arrayDeserialBlock:nil];
   }
@@ -482,10 +428,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                       deprecated:@NO
                                       resultType:[DBSHARINGListFoldersResult class]
                                        errorType:nil
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -499,10 +442,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                               deprecated:@NO
                                               resultType:[DBSHARINGListFoldersResult class]
                                                errorType:[DBSHARINGListFoldersContinueError class]
-                                                   attrs:@{
-                                                     @"host" : @"api",
-                                                     @"style" : @"rpc"
-                                                   }
+                                                   attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                         arraySerialBlock:nil
                                       arrayDeserialBlock:nil];
   }
@@ -516,10 +456,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                deprecated:@NO
                                                resultType:[DBSHARINGListFoldersResult class]
                                                 errorType:nil
-                                                    attrs:@{
-                                                      @"host" : @"api",
-                                                      @"style" : @"rpc"
-                                                    }
+                                                    attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                          arraySerialBlock:nil
                                        arrayDeserialBlock:nil];
   }
@@ -533,10 +470,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                        deprecated:@NO
                                                        resultType:[DBSHARINGListFoldersResult class]
                                                         errorType:[DBSHARINGListFoldersContinueError class]
-                                                            attrs:@{
-                                                              @"host" : @"api",
-                                                              @"style" : @"rpc"
-                                                            }
+                                                            attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                  arraySerialBlock:nil
                                                arrayDeserialBlock:nil];
   }
@@ -550,10 +484,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                             deprecated:@NO
                                             resultType:[DBSHARINGListFilesResult class]
                                              errorType:[DBSHARINGSharingUserError class]
-                                                 attrs:@{
-                                                   @"host" : @"api",
-                                                   @"style" : @"rpc"
-                                                 }
+                                                 attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -567,10 +498,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                     deprecated:@NO
                                                     resultType:[DBSHARINGListFilesResult class]
                                                      errorType:[DBSHARINGListFilesContinueError class]
-                                                         attrs:@{
-                                                           @"host" : @"api",
-                                                           @"style" : @"rpc"
-                                                         }
+                                                         attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                               arraySerialBlock:nil
                                             arrayDeserialBlock:nil];
   }
@@ -584,10 +512,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                           deprecated:@NO
                                           resultType:[DBSHARINGListSharedLinksResult class]
                                            errorType:[DBSHARINGListSharedLinksError class]
-                                               attrs:@{
-                                                 @"host" : @"api",
-                                                 @"style" : @"rpc"
-                                               }
+                                               attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                     arraySerialBlock:nil
                                   arrayDeserialBlock:nil];
   }
@@ -601,10 +526,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                    deprecated:@NO
                                                    resultType:[DBSHARINGSharedLinkMetadata class]
                                                     errorType:[DBSHARINGModifySharedLinkSettingsError class]
-                                                        attrs:@{
-                                                          @"host" : @"api",
-                                                          @"style" : @"rpc"
-                                                        }
+                                                        attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                              arraySerialBlock:nil
                                            arrayDeserialBlock:nil];
   }
@@ -618,10 +540,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                       deprecated:@NO
                                       resultType:[DBSHARINGSharedFolderMetadata class]
                                        errorType:[DBSHARINGMountFolderError class]
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -635,10 +554,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                    deprecated:@NO
                                                    resultType:nil
                                                     errorType:[DBSHARINGRelinquishFileMembershipError class]
-                                                        attrs:@{
-                                                          @"host" : @"api",
-                                                          @"style" : @"rpc"
-                                                        }
+                                                        attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                              arraySerialBlock:nil
                                            arrayDeserialBlock:nil];
   }
@@ -652,10 +568,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                                      deprecated:@NO
                                                      resultType:[DBASYNCLaunchEmptyResult class]
                                                       errorType:[DBSHARINGRelinquishFolderMembershipError class]
-                                                          attrs:@{
-                                                            @"host" : @"api",
-                                                            @"style" : @"rpc"
-                                                          }
+                                                          attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                                arraySerialBlock:nil
                                              arrayDeserialBlock:nil];
   }
@@ -669,10 +582,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                            deprecated:@YES
                                            resultType:[DBSHARINGFileMemberActionIndividualResult class]
                                             errorType:[DBSHARINGRemoveFileMemberError class]
-                                                attrs:@{
-                                                  @"host" : @"api",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -686,10 +596,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                             deprecated:@NO
                                             resultType:[DBSHARINGFileMemberRemoveActionResult class]
                                              errorType:[DBSHARINGRemoveFileMemberError class]
-                                                 attrs:@{
-                                                   @"host" : @"api",
-                                                   @"style" : @"rpc"
-                                                 }
+                                                 attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                       arraySerialBlock:nil
                                     arrayDeserialBlock:nil];
   }
@@ -703,10 +610,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                              deprecated:@NO
                                              resultType:[DBASYNCLaunchResultBase class]
                                               errorType:[DBSHARINGRemoveFolderMemberError class]
-                                                  attrs:@{
-                                                    @"host" : @"api",
-                                                    @"style" : @"rpc"
-                                                  }
+                                                  attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                        arraySerialBlock:nil
                                      arrayDeserialBlock:nil];
   }
@@ -720,10 +624,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                            deprecated:@NO
                                            resultType:nil
                                             errorType:[DBSHARINGRevokeSharedLinkError class]
-                                                attrs:@{
-                                                  @"host" : @"api",
-                                                  @"style" : @"rpc"
-                                                }
+                                                attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                      arraySerialBlock:nil
                                    arrayDeserialBlock:nil];
   }
@@ -737,10 +638,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                       deprecated:@NO
                                       resultType:[DBSHARINGShareFolderLaunch class]
                                        errorType:[DBSHARINGShareFolderError class]
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -754,10 +652,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                          deprecated:@NO
                                          resultType:nil
                                           errorType:[DBSHARINGTransferFolderError class]
-                                              attrs:@{
-                                                @"host" : @"api",
-                                                @"style" : @"rpc"
-                                              }
+                                              attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                    arraySerialBlock:nil
                                  arrayDeserialBlock:nil];
   }
@@ -771,10 +666,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                         deprecated:@NO
                                         resultType:nil
                                          errorType:[DBSHARINGUnmountFolderError class]
-                                             attrs:@{
-                                               @"host" : @"api",
-                                               @"style" : @"rpc"
-                                             }
+                                             attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                   arraySerialBlock:nil
                                 arrayDeserialBlock:nil];
   }
@@ -788,10 +680,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                       deprecated:@NO
                                       resultType:nil
                                        errorType:[DBSHARINGUnshareFileError class]
-                                           attrs:@{
-                                             @"host" : @"api",
-                                             @"style" : @"rpc"
-                                           }
+                                           attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                 arraySerialBlock:nil
                               arrayDeserialBlock:nil];
   }
@@ -805,10 +694,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                         deprecated:@NO
                                         resultType:[DBASYNCLaunchEmptyResult class]
                                          errorType:[DBSHARINGUnshareFolderError class]
-                                             attrs:@{
-                                               @"host" : @"api",
-                                               @"style" : @"rpc"
-                                             }
+                                             attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                   arraySerialBlock:nil
                                 arrayDeserialBlock:nil];
   }
@@ -822,10 +708,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                              deprecated:@NO
                                              resultType:[DBSHARINGMemberAccessLevelResult class]
                                               errorType:[DBSHARINGUpdateFolderMemberError class]
-                                                  attrs:@{
-                                                    @"host" : @"api",
-                                                    @"style" : @"rpc"
-                                                  }
+                                                  attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                        arraySerialBlock:nil
                                      arrayDeserialBlock:nil];
   }
@@ -839,10 +722,7 @@ static DBRoute *DBSHARINGUpdateFolderPolicy;
                                              deprecated:@NO
                                              resultType:[DBSHARINGSharedFolderMetadata class]
                                               errorType:[DBSHARINGUpdateFolderPolicyError class]
-                                                  attrs:@{
-                                                    @"host" : @"api",
-                                                    @"style" : @"rpc"
-                                                  }
+                                                  attrs:@{@"host" : @"api", @"style" : @"rpc"}
                                        arraySerialBlock:nil
                                      arrayDeserialBlock:nil];
   }
