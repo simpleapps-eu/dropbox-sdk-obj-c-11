@@ -188,9 +188,7 @@
   } else if ([valueObj isPropertyGroupAlreadyExists]) {
     jsonDict[@".tag"] = @"property_group_already_exists";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -217,10 +215,7 @@
     return [[DBFILESAddPropertiesError alloc] initWithPropertyGroupAlreadyExists];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBFILESAddPropertiesError alloc] initWithOther];
 }
 
 @end

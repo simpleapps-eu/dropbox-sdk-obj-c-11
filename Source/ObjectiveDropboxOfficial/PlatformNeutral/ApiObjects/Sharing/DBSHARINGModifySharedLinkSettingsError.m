@@ -147,9 +147,7 @@
   } else if ([valueObj isEmailNotVerified]) {
     jsonDict[@".tag"] = @"email_not_verified";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -172,10 +170,7 @@
     return [[DBSHARINGModifySharedLinkSettingsError alloc] initWithEmailNotVerified];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBSHARINGModifySharedLinkSettingsError alloc] initWithOther];
 }
 
 @end

@@ -100,9 +100,7 @@
   } else if ([valueObj isMemberNotInGroup]) {
     jsonDict[@".tag"] = @"member_not_in_group";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -119,10 +117,7 @@
     return [[DBTEAMGroupMemberSelectorError alloc] initWithMemberNotInGroup];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMGroupMemberSelectorError alloc] initWithOther];
 }
 
 @end

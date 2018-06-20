@@ -292,9 +292,7 @@
   } else if ([valueObj isEmailAddressTooLongToBeDisabled]) {
     jsonDict[@".tag"] = @"email_address_too_long_to_be_disabled";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -335,10 +333,7 @@
     return [[DBTEAMMembersRemoveError alloc] initWithEmailAddressTooLongToBeDisabled];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMMembersRemoveError alloc] initWithOther];
 }
 
 @end

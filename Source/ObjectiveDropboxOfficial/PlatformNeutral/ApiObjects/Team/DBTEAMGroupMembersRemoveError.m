@@ -116,9 +116,7 @@
   } else if ([valueObj isGroupNotInTeam]) {
     jsonDict[@".tag"] = @"group_not_in_team";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -137,10 +135,7 @@
     return [[DBTEAMGroupMembersRemoveError alloc] initWithGroupNotInTeam];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMGroupMembersRemoveError alloc] initWithOther];
 }
 
 @end

@@ -161,9 +161,7 @@
   } else if ([valueObj isNoPermission]) {
     jsonDict[@".tag"] = @"no_permission";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -187,10 +185,7 @@
     return [[DBSHARINGShareFolderError alloc] initWithNoPermission];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBSHARINGShareFolderError alloc] initWithOther];
 }
 
 @end

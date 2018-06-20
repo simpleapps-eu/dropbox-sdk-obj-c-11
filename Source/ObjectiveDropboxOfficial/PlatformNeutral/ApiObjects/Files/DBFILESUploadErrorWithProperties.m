@@ -127,9 +127,7 @@
         [[DBFILESInvalidPropertyGroupErrorSerializer serialize:valueObj.propertiesError] mutableCopy];
     jsonDict[@".tag"] = @"properties_error";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -149,10 +147,7 @@
     return [[DBFILESUploadErrorWithProperties alloc] initWithPropertiesError:propertiesError];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBFILESUploadErrorWithProperties alloc] initWithOther];
 }
 
 @end

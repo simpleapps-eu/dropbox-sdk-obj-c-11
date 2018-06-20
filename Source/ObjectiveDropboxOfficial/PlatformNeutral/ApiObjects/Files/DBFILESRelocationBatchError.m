@@ -248,9 +248,7 @@
   } else if ([valueObj isTooManyWriteOperations]) {
     jsonDict[@".tag"] = @"too_many_write_operations";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -284,10 +282,7 @@
     return [[DBFILESRelocationBatchError alloc] initWithTooManyWriteOperations];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBFILESRelocationBatchError alloc] initWithOther];
 }
 
 @end

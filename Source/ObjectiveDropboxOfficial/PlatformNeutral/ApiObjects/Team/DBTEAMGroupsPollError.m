@@ -116,9 +116,7 @@
   } else if ([valueObj isAccessDenied]) {
     jsonDict[@".tag"] = @"access_denied";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -137,10 +135,7 @@
     return [[DBTEAMGroupsPollError alloc] initWithAccessDenied];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMGroupsPollError alloc] initWithOther];
 }
 
 @end

@@ -100,9 +100,7 @@
   } else if ([valueObj isGroupAlreadyDeleted]) {
     jsonDict[@".tag"] = @"group_already_deleted";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -119,10 +117,7 @@
     return [[DBTEAMGroupDeleteError alloc] initWithGroupAlreadyDeleted];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMGroupDeleteError alloc] initWithOther];
 }
 
 @end

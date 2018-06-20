@@ -148,9 +148,7 @@
   } else if ([valueObj isOther]) {
     jsonDict[@".tag"] = @"other";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -173,10 +171,7 @@
     return [[DBSHARINGResolvedVisibility alloc] initWithOther];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBSHARINGResolvedVisibility alloc] initWithOther];
 }
 
 @end

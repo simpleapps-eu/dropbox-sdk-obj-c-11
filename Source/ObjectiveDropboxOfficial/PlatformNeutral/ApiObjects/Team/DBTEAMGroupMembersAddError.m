@@ -228,9 +228,7 @@
                            }];
     jsonDict[@".tag"] = @"user_cannot_be_manager_of_company_managed_group";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -271,10 +269,7 @@
         initWithUserCannotBeManagerOfCompanyManagedGroup:userCannotBeManagerOfCompanyManagedGroup];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMGroupMembersAddError alloc] initWithOther];
 }
 
 @end

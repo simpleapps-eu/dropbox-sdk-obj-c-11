@@ -116,9 +116,7 @@
   } else if ([valueObj isSharedLinkMalformed]) {
     jsonDict[@".tag"] = @"shared_link_malformed";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -137,10 +135,7 @@
     return [[DBSHARINGRevokeSharedLinkError alloc] initWithSharedLinkMalformed];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBSHARINGRevokeSharedLinkError alloc] initWithOther];
 }
 
 @end

@@ -148,9 +148,7 @@
   } else if ([valueObj isTeamLicenseLimit]) {
     jsonDict[@".tag"] = @"team_license_limit";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -173,10 +171,7 @@
     return [[DBTEAMMembersSuspendError alloc] initWithTeamLicenseLimit];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMMembersSuspendError alloc] initWithOther];
 }
 
 @end

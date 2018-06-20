@@ -100,9 +100,7 @@
   } else if ([valueObj isExternalIdAlreadyInUse]) {
     jsonDict[@".tag"] = @"external_id_already_in_use";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -119,10 +117,7 @@
     return [[DBTEAMGroupUpdateError alloc] initWithExternalIdAlreadyInUse];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBTEAMGroupUpdateError alloc] initWithOther];
 }
 
 @end

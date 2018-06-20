@@ -173,9 +173,7 @@
   } else if ([valueObj isDoesNotFitTemplate]) {
     jsonDict[@".tag"] = @"does_not_fit_template";
   } else {
-    @throw([NSException exceptionWithName:@"InvalidTag"
-                                   reason:@"Object not properly initialized. Tag has an unknown value."
-                                 userInfo:nil]);
+    jsonDict[@".tag"] = @"other";
   }
 
   return jsonDict;
@@ -200,10 +198,7 @@
     return [[DBFILESInvalidPropertyGroupError alloc] initWithDoesNotFitTemplate];
   }
 
-  @throw([NSException
-      exceptionWithName:@"InvalidTag"
-                 reason:[NSString stringWithFormat:@"Tag has an invalid value: \"%@\".", valueDict[@".tag"]]
-               userInfo:nil]);
+  return [[DBFILESInvalidPropertyGroupError alloc] initWithOther];
 }
 
 @end
