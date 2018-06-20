@@ -76,7 +76,7 @@ All requests need to be made with an OAuth 2.0 access token. An OAuth token repr
 a Dropbox user account or team.
 
 Once you've created an app, you can go to the App Console and manually generate an access token to authorize your app to access your own Dropbox account.
-Otherwise, you can obtain an OAuth token programmatically using the SDK's pre-defined auth flow. For more information, [see below](https://github.com/dropbox/dropbox-sdk-obj-c#handling-authorization-flow).
+Otherwise, you can obtain an OAuth token programmatically using the SDK's pre-defined auth flow. For more information, [see below](https://github.com/simpleapps-eu/dropbox-sdk-obj-c-11#handling-authorization-flow).
 
 ---
 
@@ -127,7 +127,7 @@ brew install carthage
 
 ```
 # ObjectiveDropboxOfficial
-github "https://github.com/dropbox/dropbox-sdk-obj-c" ~> 1.1.4
+github "https://github.com/simplemind-eu/dropbox-sdk-obj-c-11" ~> 1.1.4
 ```
 
 Then, run the following command to checkout and build the Dropbox Objective-C SDK repository:
@@ -231,7 +231,7 @@ You should add the following code to your `.plist` file (but be sure to replace 
 After you've made the above changes, your application's `.plist` file should look something like this:
 
 <p align="center">
-  <img src="https://github.com/dropbox/dropbox-sdk-obj-c/blob/master/Images/InfoPlistExample.png?raw=true" alt="Info .plist Example"/>
+  <img src="https://github.com/simpleapps-eu/dropbox-sdk-obj-c-11/blob/master/Images/InfoPlistExample.png?raw=true" alt="Info .plist Example"/>
 </p>
 
 ---
@@ -312,7 +312,7 @@ Beginning the authentication flow via in-app webview will launch a window like t
 
 
 <p align="center">
-  <img src="https://github.com/dropbox/dropbox-sdk-obj-c/blob/master/Images/OAuthFlowInit.png?raw=true" alt="Auth Flow Init Example"/>
+  <img src="https://github.com/simpleapps-eu/dropbox-sdk-obj-c-11/blob/master/Images/OAuthFlowInit.png?raw=true" alt="Auth Flow Init Example"/>
 </p>
 
 ---
@@ -375,7 +375,7 @@ After the end user signs in with their Dropbox login credentials via the in-app 
 
 
 <p align="center">
-  <img src="https://github.com/dropbox/dropbox-sdk-obj-c/blob/master/Images/OAuthFlowApproval.png?raw=true" alt="Auth Flow Approval Example"/>
+  <img src="https://github.com/simpleapps-eu/dropbox-sdk-obj-c-11/blob/master/Images/OAuthFlowApproval.png?raw=true" alt="Auth Flow Approval Example"/>
 </p>
 
 If they press **Allow** or **Cancel**, the `db-<APP_KEY>` redirect URL will be launched from the webview, and will be handled in your application
@@ -749,7 +749,7 @@ The `DropboxClient` (or `DropboxTeamClient`) is then used to make all of the des
 
 Example projects that demonstrate how to integrate your app with the SDK can be found in the `Examples/` folder.
 
-* [DBRoulette](https://github.com/dropbox/dropbox-sdk-obj-c/tree/master/Examples/DBRoulette/) - Play a fun game of photo roulette with the image files in your Dropbox!
+* [DBRoulette](https://github.com/simpleapps-eu/dropbox-sdk-obj-c-11/tree/master/Examples/DBRoulette/) - Play a fun game of photo roulette with the image files in your Dropbox!
 
 ---
 
@@ -762,7 +762,7 @@ Example projects that demonstrate how to integrate your app with the SDK can be 
 
 ## Stone
 
-All of our routes and data types are auto-generated using a framework called [Stone](https://github.com/dropbox/stone).
+All of our routes and data types are auto-generated using a framework called [Stone](https://github.com/simpleapps-eu/stone).
 
 The `stone` repo contains all of the Objective-C specific generation logic, and the `spec` repo contains the language-neutral API endpoint specifications which serve
 as input to the language-specific generators.
@@ -786,7 +786,7 @@ following the instructions listed in the `ViewController.m` file.
 
 ## Bugs
 
-Please post any bugs to the [issue tracker](https://github.com/dropbox/dropbox-sdk-obj-c/issues) found on the project's GitHub page.
+Please post any bugs to the [issue tracker](https://github.com/simpleapps-eu/dropbox-sdk-obj-c-11/issues) found on the project's GitHub page.
   
 Please include the following with your issue:
  - a description of what is not working right
